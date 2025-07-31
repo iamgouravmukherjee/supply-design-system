@@ -1,50 +1,44 @@
-// app/welcome.tsx
 "use client";
 
 import { Button } from "@supply/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@supply/components/ui/card";
-import { StarRating } from "@supply/components/ui/feedback/star-rating"; // Assuming this is the correct path
+import { Card, CardContent } from "@supply/components/ui/card";
+import { StarRating } from "@supply/components/ui/feedback/star-rating";
+import { Heading } from "@supply/components/ui/typography/heading";
+import { Typography } from "@supply/components/ui/typography/typography";
 import { useState } from "react";
 
 export default function WelcomePage() {
-  const [rating, setRating] = useState<number>();
+  const [rating, setRating] = useState<number>(0);
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleFeedbackSubmit = () => {
+    console.log("User rating submitted:", rating);
+    setSubmitted(true);
+  };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-muted px-4 py-8">
-      <Card className="w-full max-w-md shadow-xl border border-border rounded-2xl">
-        <CardHeader>
-          <CardTitle className="text-center text-2xl font-bold">
-            Welcome to Our Design System
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6 text-center">
-          <p className="text-muted-foreground">
-            We&apos;re building a flexible, accessible component library with
-            ShadCN, TailwindCSS, and Storybook.
-          </p>
-
-          <div>
-            <p className="mb-2 font-medium">
-              How would you rate this experience?
-            </p>
-            <StarRating value={rating} onChange={(value) => setRating(value)} />
-            {rating && (
-              <p className="mt-2 text-sm text-muted-foreground">
-                You rated this {rating} star{rating > 1 ? "s" : ""}.
-              </p>
-            )}
+    <div className="flex flex-col items-center justify-center min-h-screen bg-white px-6 py-12 text-center">
+      <Card className="w-full max-w-xl shadow-xl">
+        <CardContent className="flex flex-col items-center space-y-6 py-10">
+          <Heading level="1" className="text-center">
+            Welcome to the Design System
+          </Heading>
+          <Typography variant="lead" className="text-center">
+            We’re building a modern, accessible design system to support online
+            digital services. Your feedback helps us improve.
+          </Typography>
+          <div className="mt-4 scale-[1.5]">
+            <StarRating
+              value={rating}
+              onChange={setRating}
+              readOnly={submitted}
+            />
           </div>
-
           <Button
-            className="w-full"
-            onClick={() => alert("Let’s explore more!")}
+            onClick={handleFeedbackSubmit}
+            disabled={submitted || rating === 0}
           >
-            Explore Components
+            {submitted ? "Thank You!" : "Submit Feedback"}
           </Button>
         </CardContent>
       </Card>

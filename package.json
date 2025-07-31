@@ -4,11 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build": "next build && next export",
+    "build-storybook": "storybook build",
+    "prepare-deploy": "npm run build && npm run build-storybook && cp -r storybook-static out/storybook"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.3",
