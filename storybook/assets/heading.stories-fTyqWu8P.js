@@ -1,0 +1,10 @@
+import{j as m}from"./jsx-runtime-BdGNVM9n.js";import{c as p}from"./utils-CBfrqCZ4.js";import{c as u}from"./index-CdJFUDDL.js";import"./iframe-iVvb-d_9.js";const g=u("scroll-m-20 tracking-tight",{variants:{level:{1:"text-4xl font-bold",2:"text-3xl font-semibold",3:"text-2xl font-semibold",4:"text-xl font-medium",5:"text-lg font-medium",6:"text-base font-medium"},align:{left:"text-left",center:"text-center",right:"text-right"},tone:{default:"",muted:"text-muted-foreground",accent:"text-primary"},transform:{none:"",uppercase:"uppercase",lowercase:"lowercase",capitalize:"capitalize"}},defaultVariants:{level:"1",align:"left",tone:"default",transform:"none"}}),r=({level:a="1",align:n,tone:s,transform:o,className:l,children:i,...c})=>{const d=`h${a}`;return m.jsx(d,{className:p(g({level:a,align:n,tone:s,transform:o}),l),...c,children:i})};r.__docgenInfo={description:"",methods:[],displayName:"Heading",props:{level:{required:!1,tsType:{name:"union",raw:'"1" | "2" | "3" | "4" | "5" | "6"',elements:[{name:"literal",value:'"1"'},{name:"literal",value:'"2"'},{name:"literal",value:'"3"'},{name:"literal",value:'"4"'},{name:"literal",value:'"5"'},{name:"literal",value:'"6"'}]},description:"",defaultValue:{value:'"1"',computed:!1}},children:{required:!0,tsType:{name:"ReactReactNode",raw:"React.ReactNode"},description:""}},composes:["VariantProps"]};const H={title:"Typography/Heading",component:r,tags:["autodocs"],argTypes:{level:{control:{type:"select"},options:["1","2","3","4","5","6"]}}},e={args:{children:"This is H1 Heading"}},t={args:{level:"2",children:"This is H2 Heading"}};e.parameters={...e.parameters,docs:{...e.parameters?.docs,source:{originalSource:`{
+  args: {
+    children: "This is H1 Heading"
+  }
+}`,...e.parameters?.docs?.source}}};t.parameters={...t.parameters,docs:{...t.parameters?.docs,source:{originalSource:`{
+  args: {
+    level: "2",
+    children: "This is H2 Heading"
+  }
+}`,...t.parameters?.docs?.source}}};const T=["Default","H2"];export{e as Default,t as H2,T as __namedExportsOrder,H as default};
