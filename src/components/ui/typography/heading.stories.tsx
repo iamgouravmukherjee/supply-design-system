@@ -1,10 +1,11 @@
 // components/ui/typography/heading.stories.tsx
-import type { Meta, StoryFn } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Heading } from "./heading";
 
 const meta: Meta<typeof Heading> = {
   title: "Typography/Heading",
   component: Heading,
+  tags: ["autodocs"],
   argTypes: {
     level: {
       control: {
@@ -17,10 +18,17 @@ const meta: Meta<typeof Heading> = {
 
 export default meta;
 
-const Template: StoryFn<typeof Heading> = (args) => <Heading {...args} />;
+type Story = StoryObj<typeof Heading>;
 
-export const H1 = Template.bind({});
-H1.args = {
-  level: "1",
-  children: "This is an H1 heading",
+export const Default: Story = {
+  args: {
+    children: "This is H1 Heading",
+  },
+};
+
+export const H2: Story = {
+  args: {
+    level: "2",
+    children: "This is H2 Heading",
+  },
 };
