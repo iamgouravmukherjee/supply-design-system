@@ -7,7 +7,7 @@
     "start": "next start",
     "lint": "next lint",
     "storybook": "storybook dev -p 6006",
-    "build": "next build && next export",
+    "build": "next build",
     "build-storybook": "storybook build",
     "prepare-deploy": "npm run build && npm run build-storybook && cp -r storybook-static out/storybook"
   },
